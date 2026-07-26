@@ -157,7 +157,7 @@ function CreateForm({ router }: { router: ReturnType<typeof useRouter> }) {
       return
     }
     localStorage.setItem(`hnc:admin:${res.data.code}`, "1")
-    router.push(`/admin/${res.data.code}`)
+    router.push(`/jogo/${res.data.code}`)
   }
 
   return (
@@ -200,7 +200,7 @@ function ObserveForm({ router }: { router: ReturnType<typeof useRouter> }) {
     }
     const normalized = code.trim().toUpperCase()
     localStorage.setItem(`hnc:admin:${normalized}`, "1")
-    router.push(`/admin/${normalized}`)
+    router.push(`/jogo/${normalized}`)
   }
 
   return (
