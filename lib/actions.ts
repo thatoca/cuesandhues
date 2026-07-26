@@ -60,9 +60,9 @@ export async function createRoom(adminPassword: string): Promise<ActionResult<{ 
       .single()
 
     if (error) {
-      if (error.code === "23505") continue // unique violation on code
-      return { ok: false, error: "Não foi possível criar a sala." }
-    }
+  console.log("ERRO SUPABASE AO CRIAR SALA:", error)
+  return { ok: false, error: error.message }
+}
 
     const { error: secretError } = await supabase
       .from("room_secrets")
